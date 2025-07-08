@@ -1,21 +1,43 @@
 // app/layout.tsx
-import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
-import type { Metadata } from 'next';
+import './globals.css'
+import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
+import Header from '@/components/header'
+import Sidebar from '@/components/sidebar'
+import Footer from '@/components/footer'
 
-export const metadata: Metadata = {
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
   title: 'Admin UI',
-  description: 'Admin panel with dark/light mode',
-};
+  description: 'License and Subscription Management',
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          {/* Full height page */}
+          <div className="flex flex-col min-h-screen">
+            <Header />
+
+            {/* Main layout */}
+            <div className="flex flex-1">
+              <Sidebar />
+
+              {/* Main content */}
+              <main className="flex-1 p-6 bg-background">{children}</main>
+            </div>
+
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
