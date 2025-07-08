@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Acme Corp",
+      "slug": "acme-corp",
+      "managedBy": "admin@example.com",
+      "status": "active"
+    },
+    {
+      "name": "Beta Group",
+      "slug": "beta-group",
+      "managedBy": "john.doe@example.com",
+      "status": "inactive"
+    },
+    {
+      "name": "Gamma LLC",
+      "slug": "gamma-llc",
+      "managedBy": "jane@company.com",
+      "status": "active"
+    }
+  ]
+  

@@ -1,5 +1,6 @@
-import { redirect } from 'next/navigation';
-
-export default function Home() {
-  redirect('/admin/dashboard');
+export default function DashboardPage() {
+  return <div className="text-xl">📊 Dashboard</div>
 }
+
+
+
